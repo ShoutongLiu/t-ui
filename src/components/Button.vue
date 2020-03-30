@@ -1,23 +1,21 @@
 <template>
-    <div>
-        <Button
-            :class="`t-button t-button-${type}
-            t-button-${size}
-            ${plain ? 'is-plain' : ''}
-            ${round ? 'is-round' : ''}
-            ${disabled ? 'is-disabled' : ''}
-            ${circle ? 'is-circle' : ''}`"
-            @click="handleClick"
-        >
-            <i
-                v-if="icon"
-                :class="`${icon}`"
-            ></i>
-            <span v-if="$slots.default">
-                <slot></slot>
-            </span>
-        </Button>
-    </div>
+    <Button
+        :class="`t-button t-button-${type}
+        t-button-${size}
+        ${plain ? 'is-plain' : ''}
+        ${round ? 'is-round' : ''}
+        ${disabled ? 'is-disabled' : ''}
+        ${circle ? 'is-circle' : ''}`"
+        @click="handleClick"
+    >
+        <i
+            v-if="icon"
+            :class="`${icon}`"
+        ></i>
+        <span v-if="$slots.default">
+            <slot></slot>
+        </span>
+    </Button>
 </template>
 
 <script>

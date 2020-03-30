@@ -4,35 +4,43 @@
             type="danger"
             round
             plain
+            @click="visible = true"
         >主要按钮</t-button>
-        <t-button
-            type="info"
-            disabled
-            size="small"
-            circle
-        >钮</t-button>
-        <t-button
-            type="primary"
-            disabled
-            size="mini"
-            plain
-        >按钮</t-button>
-        <t-button
-            type="warning"
-            circle
-            icon="t-icon-cuo"
-            @click="handClick"
-        ></t-button>
+
+        <div>
+            <t-dialog
+                title="提示"
+                top="300px"
+                slot="footer"
+                :visible.sync="visible"
+            >
+                <template v-slot:footer>
+                    <t-button type="primary">确定</t-button>
+                    <t-button>取消</t-button>
+                </template>
+            </t-dialog>
+        </div>
+        <t-input type="password" placeholder="请输入" v-model="name" showPassword></t-input>
     </div>
 </template>
 
 <script>
 import TButton from './components/Button.vue'
+import TDialog from './components/Dialog.vue'
+import TInput from './components/Input.vue'
 
 export default {
     name: 'App',
+    data() {
+        return {
+            visible: false,
+            name: 'tom'
+        }
+    },
     components: {
-        TButton
+        TButton,
+        TDialog,
+        TInput
     },
     methods: {
         handClick(e) {
