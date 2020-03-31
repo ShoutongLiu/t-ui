@@ -1,0 +1,10 @@
+# 忽略上传目录
+packages/
+node_modules/
+public/
+src/
+
+# 忽略上传文件
+vue.config.js
+babel.config.js
+*.npm

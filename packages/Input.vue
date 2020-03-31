@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: 'Input',
+    name: 'TInput',
     data () {
         return {
             pwdVisiable: false

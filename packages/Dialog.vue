@@ -37,7 +37,7 @@
 </template>
 <script>
 export default {
-    name: 'Dialog',
+    name: 'TDialog',
     props: {
         title: {
             type: String,
